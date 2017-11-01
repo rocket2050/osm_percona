@@ -1,3 +1,0 @@
-# osm_percona
-
-This 

@@ -1,6 +1,0 @@
----
-- hosts: mysql-replication
-  gather_facts: yes
-  roles:
-  - role: ansible-percona
-  - role: mysql-replication

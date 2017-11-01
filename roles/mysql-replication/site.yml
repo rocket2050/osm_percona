@@ -1,6 +1,0 @@
----
-- hosts: mysql-replication
-  roles:
-    - { role: /root/mysql/mysql-replication }
-
-
