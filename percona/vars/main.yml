@@ -1,4 +1,0 @@
----
-# vars file for percona
-db_password: password
-ansible_distribution_release: xenial
