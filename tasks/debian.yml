@@ -22,3 +22,4 @@
 
 - name: To configure Percona
   include: mysql_secure_installation.yml
+
