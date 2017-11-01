@@ -1,0 +1,24 @@
+---
+
+- name: Add Percona repository key
+  apt_key: keyserver=keys.gnupg.net id=9334A25F8507EFA5 state=present
+
+- name: Add Percona repository
+  apt: deb="https://repo.percona.com/apt/percona-release_0.1-4.{{ansible_distribution_release}}_all.deb"
+
+- name: Update apt
+  apt: update_cache=yes
+
+- name: Install Percona MySQL Server
+  apt: name={{ item }} state=present
+  with_items:
+    - percona-server-server-5.7
+    - percona-server-client-5.7
+    - percona-toolkit
+    - percona-xtrabackup
+    - python-mysqldb
+  notify:
+    - start_mysqld
+
+- name: To configure Percona
+  include: mysql_secure_installation.yml

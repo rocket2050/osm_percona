@@ -1,0 +1,11 @@
+---
+# tasks file for percona
+- name: To install percona on RedHat
+  include: redhat.yml
+  when:
+    ansible_os_family == 'RedHat'
+
+- name: To install percona on Debian
+  include: debian.yml
+  when:
+    ansible_os_family == 'Debian'
